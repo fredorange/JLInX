@@ -1,0 +1,9 @@
+Please be aware that GITHUB is not our master source code repository.
+
+/jlinx-api-6.0.8-sources
+Not buildable source code for the 6.0.8 release. 
+The complete jlinx project, including build script and test strategy, can be provided on request.
+
+/jlinx-phaSample
+Buildable Maven project to start with PHA development over jlinx and Indivo X.
+

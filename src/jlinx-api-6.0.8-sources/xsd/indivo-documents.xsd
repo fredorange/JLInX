@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://indivo.org/vocab/xml/documents#"
+			xmlns:indivo="http://indivo.org/vocab/xml/documents#"
+	   		elementFormDefault="qualified">
+	   		
+  <xs:include schemaLocation="vitals.xsd" />
+  <xs:include schemaLocation="problem.xsd" />
+  <xs:include schemaLocation="equipment.xsd" />
+  <xs:include schemaLocation="allergy.xsd" />
+  <xs:include schemaLocation="immunization.xsd" />
+  <xs:include schemaLocation="procedure.xsd" />
+  <xs:include schemaLocation="medication.xsd" />
+	
+  <xs:complexType name="AnyMedical">
+    <xs:choice>
+      <xs:element name="VitalSign" type="indivo:VitalSign"/>
+      <xs:element name="Equipment" type="indivo:Equipment"/>
+      <xs:element name="Allergy" type="indivo:Allergy"/>
+      <xs:element name="Immunization" type="indivo:Immunization"/>
+      <xs:element name="Procedure" type="indivo:Procedure"/>
+      <xs:element name="Problem" type="indivo:Problem"/>
+      <xs:element name="Medication" type="indivo:Medication"/>
+      <xs:element name="Prescription" type="indivo:Prescription"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>

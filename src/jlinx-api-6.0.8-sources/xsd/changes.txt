@@ -1,0 +1,58 @@
+====
+        Copyright  (c) 2010        France Telecom / Orange Labs
+
+        This file is part of JLInX, Java Lib for Indivo X.
+
+        JLInX is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published by
+        the Free Software Foundation, version 3 (LGPLv3).
+
+        JLInX is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with JLInX.  If not, see <http://www.gnu.org/licenses/>.
+
+====
+
+6/12/2010 Updated with Beta1 schemas
+          + redo metadata.xsd:
+- extracted complex type "DocumentMeta" (for reuse in "Documents")
+- removed 'used="required"' for size and digest attributes of type DocumentMeta, 
+  since they are not sent by server after a "set status" call
+- set minOccurs="0" for CreatedAt Creator all elements of type DocumentMeta, since they are not sent by server 
+  after a "set status" call
+--------------------------
+values.xsd:
+- added <xs:include schemaLocation="codes.xsd" /> to avoid validation error
+
+indivo-documents.xsd:
+- new xsd for aggregating all xsd of #documents namespace
+- added complex type "AnyMedical" to use in "Report" type
+
+indivo-other.xsd:
+- new xsd for aggregating all xsd without namespace
+- added elements "Documents" of type "DocumentMetaList" for document listing
+- inserted the Reports part, taken from Indivo wiki and extracted complex type "Report"
+- added element DocumentStatusHistory, deduced from Indivo wiki
+
+metadata.xsd:
+- extracted complex type "DocumentMeta" (for reuse in "Documents")
+- removed 'used="required"' for size and digest attributes of type DocumentMeta, 
+  since they are not sent by server after a "set status" call
+- set minOccurs="0" for all elements of type DocumentMeta, since they are not sent by server 
+  after a "set status" call
+
+vitals.xsd:
+- extracted complex type "VitalSign" (for reuse in type "AnyMedical" of "Report")
+
+problem.xsd:
+- extracted complex type "Problem" (for reuse in type "AnyMedical" of "Report")
+
+equipment 
+- extracted complex type "Equipment"
+
+allergy
+- extracted complex type "Allergy"

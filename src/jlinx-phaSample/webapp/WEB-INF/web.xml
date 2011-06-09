@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+        Copyright  (c) 2010        France Telecom / Orange Labs
+
+        This file is part of JLInX, Java Lib for Indivo X.
+
+        JLInX is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published by
+        the Free Software Foundation, version 3 (LGPLv3).
+
+        JLInX is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with JLInX.  If not, see <http://www.gnu.org/licenses/>.
+
+
+-->
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>JlinX</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>IndivoStartAuth</display-name>
+    <servlet-name>IndivoStartAuth</servlet-name>
+    <servlet-class>com.orange.jlinx.sample.pha.IndivoStartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndivoStartAuth</servlet-name>
+    <url-pattern>/start_auth</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>IndivoAfterAuth</display-name>
+    <servlet-name>IndivoAfterAuth</servlet-name>
+    <servlet-class>com.orange.jlinx.sample.pha.IndivoCallbackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IndivoAfterAuth</servlet-name>
+    <url-pattern>/after_auth</url-pattern>
+  </servlet-mapping>
+</web-app>

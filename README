@@ -1,4 +1,4 @@
-     Copyright  (c) 2010        France Telecom / Orange Labs
+     Copyright  (c) 2011        France Telecom / Orange Labs
      This file is part of JLInX, Java Lib for Indivo X.
 
                     Java Library for INdivo X
@@ -35,4 +35,4 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with JLInX.  If not, see <http://www.gnu.org/licenses/>.
+along with JLInX.  If not, see http://www.gnu.org/licenses.

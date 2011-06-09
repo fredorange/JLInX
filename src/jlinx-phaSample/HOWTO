@@ -1,0 +1,43 @@
+     Copyright  (c) 2011        France Telecom / Orange Labs
+     This file is part of JLInX, Java Lib for Indivo X.
+
+                    Java PHA Sample for Indivo X 
+                             JLInX
+
+
+This is a sample project distributed within the JLInX library. 
+It provides a Web application PHA and a Webless application that illustrates some 
+library calls.
+
+1) Update the file SampleConfig.java according to your Indivo configuration.
+
+2) Create the sample application. Here is how it should like in indivo-data.xml:
+  <user_app name='Testing App' email='jlinx-phaSample@apps.indivo.org'>
+	<description>JLInX Sample PHA  @yourhost:port/jlinx-phaSample.</description>
+	<consumer_key>jlinx-phaSample</consumer_key>
+	<secret>secret</secret>
+	<frameable>True</frameable>
+	<has_ui>True</has_ui>
+	<start_url_template>
+	http://yourhost:port//jlinx-phaSample/start_auth?record_id={record_id}&#38;carenet_id={carenet_id}&#38;document_id={document_id}
+	</start_url_template>
+	<callback_url>
+	http://yourhost:port//jlinx-phaSample/after_auth
+	</callback_url>
+  </user_app>
+
+3) If needed, update the file AccessTokenDao.java. It is a simple token file store.
+
+4) Build the project. A Maven POM file is provided, you may need to adapt it.
+
+5) Deploy the generated 'pha sample' war artefact into your favorite target web
+container. (Note that you should we've predefined in Indivo the web app, see 2).
+
+6) You can now connect to Indivo GUI and add the Sample PHA to your record. You
+should get a message confirmation that gives you the token information. The token
+is stored according to the AccessTokenDao.java configuration. 
+
+7) You can now build and run the WeblessPha.java application. It performs Indivo 
+calls using the previously saved token.
+
+

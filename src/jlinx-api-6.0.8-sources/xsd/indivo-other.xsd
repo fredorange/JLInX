@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:indivo="http://indivo.org/vocab/xml/documents#"
+>
+
+<!-- didn't place this in the Indivo namespace because it's not medical payload -->
+
+	<xs:import namespace="http://indivo.org/vocab/xml/documents#" schemaLocation="demographics.xsd" />
+	<xs:import namespace="http://indivo.org/vocab/xml/documents#" schemaLocation="contact.xsd" />
+    <xs:import namespace="http://indivo.org/vocab/xml/documents#" schemaLocation="provider.xsd" />
+
+	<xs:import namespace="http://indivo.org/vocab/xml/documents#" schemaLocation="indivo-documents.xsd" />
+	<xs:include schemaLocation="metadata.xsd" />
+
+	<xs:element name="Documents" type="DocumentMetaList"/>
+
+	<xs:element name="DocumentStatusHistory" type="DocumentStatusHistory"/>
+	
+	<xs:element name="Account" type="Account"/>
+
+	<xs:element name="Record" type="Record"/>
+	
+	<xs:element name="ok" type="ResultOk"/>
+  
+    <xs:complexType name="ResultOk" />
+
+    <xs:complexType name="DocumentMetaList">
+    	<xs:sequence>
+			<xs:element name="Document" type="DocumentMeta" maxOccurs="unbounded"/>
+    	</xs:sequence>
+	    <xs:attribute name="record_id" type="xs:string" use="required" />
+	    <xs:attribute name="total_document_count" type="xs:integer" use="required" />
+	</xs:complexType>
+
+	  <xs:element name="Reports">
+	    <xs:complexType>
+	      <xs:sequence>
+	        <xs:element name="Summary">
+			    <xs:complexType>
+		          <xs:attribute name="total_document_count" type="xs:integer" use="optional" />
+		          <xs:attribute name="limit" type="xs:integer" use="optional" />
+		          <xs:attribute name="offset" type="xs:integer" use="optional" />
+		          <xs:attribute name="order_by" type="xs:string" use="optional" />
+			    </xs:complexType>
+	        </xs:element>
+	        <xs:element name="Report" type="Report" maxOccurs="unbounded"/> 
+	      </xs:sequence>
+	    </xs:complexType>
+	  </xs:element>
+
+    <xs:complexType name="Report">
+      <xs:sequence>
+        <xs:element name="Meta"> 
+		    <xs:complexType>
+		    	<xs:sequence>
+					<xs:element name="Document" type="DocumentMeta" minOccurs="1" maxOccurs="1"/>
+		    	</xs:sequence>
+		    </xs:complexType>
+		 </xs:element>
+       <xs:element name="Item" type="indivo:AnyMedical"  />
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DocumentStatusHistory">
+    	<xs:sequence>
+			<xs:element name="DocumentStatus" type="DocumentStatus" maxOccurs="unbounded"/>
+    	</xs:sequence>
+	    <xs:attribute name="document_id" type="xs:string" use="required" />
+	</xs:complexType>
+
+    <xs:complexType name="DocumentStatus">
+    	<xs:sequence>
+			<xs:element name="reason" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    	</xs:sequence>
+	    <xs:attribute name="by" type="xs:string" use="required" />
+	    <xs:attribute name="at" type="xs:dateTime" use="required" />
+	    <xs:attribute name="status" type="xs:string" use="required" />
+	</xs:complexType>
+
+    <xs:complexType name="Account">
+ 		<xs:sequence>
+        	<xs:element name="secret" type="xs:string" /> 
+        	<xs:element name="fullName" type="xs:string" /> 
+        	<xs:element name="contactEmail" type="xs:string" /> 
+        	<xs:element name="lastLoginAt" type="xs:dateTime" /> 
+        	<xs:element name="totalLoginCount" type="xs:integer" /> 
+        	<xs:element name="failedLoginCount" type="xs:integer" /> 
+        	<xs:element name="state" type="xs:string" /> 
+        	<xs:element name="lastStateChange" type="xs:dateTime" /> 
+        	<xs:element name="authSystem" maxOccurs="unbounded"> 
+	 		    <xs:complexType>
+				    <xs:attribute name="name" type="xs:string" use="required" />
+				    <xs:attribute name="username" type="xs:string" use="required" />
+			    </xs:complexType>
+			</xs:element>
+ 		</xs:sequence>
+	    <xs:attribute name="id" type="xs:string" use="required" />
+	</xs:complexType>
+
+    <xs:complexType name="Record">
+ 		<xs:sequence>
+        	<xs:element name="contact" maxOccurs="1"> 
+	 		    <xs:complexType>
+				    <xs:attribute name="document_id" type="xs:string" use="required" />
+			    </xs:complexType>
+			</xs:element>
+        	<xs:element name="demographics" maxOccurs="1"> 
+	 		    <xs:complexType>
+				    <xs:attribute name="document_id" type="xs:string" use="required" />
+			    </xs:complexType>
+			</xs:element>
+ 		</xs:sequence>
+	    <xs:attribute name="id" type="xs:string" use="required" />
+	    <xs:attribute name="label" type="xs:string" />
+	</xs:complexType>
+
+</xs:schema>

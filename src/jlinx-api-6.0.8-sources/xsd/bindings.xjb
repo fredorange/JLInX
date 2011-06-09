@@ -1,0 +1,57 @@
+<!--
+
+        Copyright  (c) 2010        France Telecom / Orange Labs
+
+        This file is part of JLInX, Java Lib for Indivo X.
+
+        JLInX is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published by
+        the Free Software Foundation, version 3 (LGPLv3).
+
+        JLInX is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with JLInX.  If not, see <http://www.gnu.org/licenses/>.
+
+
+-->
+
+<jxb:bindings version="2.1" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <jxb:bindings schemaLocation="indivo-documents.xsd" node="/xs:schema">
+    <jxb:globalBindings>
+      <jxb:javaType name="javax.xml.datatype.XMLGregorianCalendar" xmlType="xs:dateTime"
+        parseMethod="com.orange.jlinx.XSDateTimeCustomBinder.parseDateTime"
+        printMethod="com.orange.jlinx.XSDateTimeCustomBinder.printDateTime" />
+      <jxb:javaType name="javax.xml.datatype.XMLGregorianCalendar" xmlType="xs:date"
+        parseMethod="com.orange.jlinx.XSDateTimeCustomBinder.parseDate"
+        printMethod="com.orange.jlinx.XSDateTimeCustomBinder.printDate" />
+      <jxb:javaType name="Double" xmlType="xs:decimal" />
+      <jxb:javaType name="java.lang.Integer" xmlType="xs:integer" />            
+    </jxb:globalBindings>
+    <jxb:schemaBindings>
+      <jxb:nameXmlTransform>
+        <jxb:elementName prefix="X"/>
+        <jxb:typeName prefix="X"/>
+      </jxb:nameXmlTransform>
+    </jxb:schemaBindings>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="indivo-other.xsd" node="/xs:schema">
+    <jxb:schemaBindings>
+      <jxb:nameXmlTransform>
+        <jxb:elementName prefix="X"/>
+        <jxb:typeName prefix="X"/>
+      </jxb:nameXmlTransform>
+    </jxb:schemaBindings>
+  </jxb:bindings>
+  <jxb:bindings schemaLocation="codes.xsd" node="/xs:schema">
+    <jxb:bindings node="//xs:complexType[@name='CodedValue']">
+      <jxb:bindings node="//xs:attribute[@name='value']">
+        <jxb:property name="codeValue"/>
+      </jxb:bindings>
+    </jxb:bindings>
+  </jxb:bindings>
+</jxb:bindings>
