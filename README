@@ -10,7 +10,7 @@ JLInX is designed for Java developers who want to easily take off with Indivo X.
 
 - What is Indivo X ?
 Indivo (http://indivohealth.org) is a health record platform, developed by the 
-Children’s Hospital Informatics Program (CHIP) in Boston, that empowers patients 
+Children's Hospital Informatics Program (CHIP) in Boston, that empowers patients 
 to take control of their personal health record. 
 Indivo integrates health information across sites of care and over time. 
 Indivo is free and open-source, uses open, unencumbered standards, and is 
@@ -18,8 +18,8 @@ actively deployed in diverse settings, in particular the Children's Hospital
 Boston and the Dossia Consortium. 
 
 - What is JLInX ?
-JLInX is different from the Indivo “core” Java Lib. It maps Indivo documents & calls 
-to “POJO” Java classes. 
+JLInX is different from the Indivo core Java Lib. It maps Indivo documents & calls 
+to POJO Java classes. 
 There is no need to be familiar with REST/ Oauth / XSD schemas in order to start &
 develop a Personal Health Application (PHA).
 There  is no restriction for the use of JLInX. 
