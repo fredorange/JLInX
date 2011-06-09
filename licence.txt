@@ -1,0 +1,28 @@
+Copyright  (c) 2011        France Telecom / Orange Labs
+
+
+This file is the licence part of JLInX, Java Lib for Indivo X.
+
+JLInX is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as 
+published by the Free Software Foundation, version 3 (LGPLv3).
+ 
+JLInX is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with JLInX, COPYING and COPYING.LESSER. Please read these.
+If not, see <http://www.gnu.org/licenses/>.
+
+ 
+ 
+Third-Party products:
+
+* SignPost is included with this program. 
+
+SignPost is licensed under Apache License 2.0 and can be downloaded 
+at http://code.google.com/p/oauth-signpost/.
+
+
