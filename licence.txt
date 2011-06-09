@@ -23,6 +23,6 @@ Third-Party products:
 * SignPost is included with this program. 
 
 SignPost is licensed under Apache License 2.0 and can be downloaded 
-at http://code.google.com/p/oauth-signpost/.
+at http://code.google.com/p/oauth-signpost.
 
 
